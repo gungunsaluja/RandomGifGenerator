@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import Spinner from "./Spinner";
 import useGif from "../hooks/useGif";
 
@@ -8,10 +8,11 @@ import useGif from "../hooks/useGif";
 const API_KEY = '1gmM18OiuKPiirUvDHyYXlb9kKj8CkpY';
 
 const Random = () => {
+  // we can use axios to call api instead of using fetchdata axios is more secure than it 
 
   // const [gif, setGif] = useState('');
   // const [loading,setLoading] = useState('false');
-  
+
   // async function fetchData(){
   //   setLoading(true);
   //   const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
@@ -24,7 +25,7 @@ const Random = () => {
   // useEffect( () => {
   //   fetchData();
   // },[] );
-  const {gif,loading,fetchData} = useGif();
+  const { gif, loading, fetchData } = useGif();
   function clickHandler() {
     fetchData();
   }
@@ -35,9 +36,9 @@ const Random = () => {
         A Random Gif
       </h1>
       {
-        loading?(<Spinner/>) :(<img src = {gif} width = "450"/>)
+        loading ? (<Spinner />) : (<img src={gif} width="450" />)
       }
-      
+
       <button
         onClick={clickHandler}
         className="w-10/12 bg-white opacity-60 text-lg py-2 rounded-lg mb-[20px]"
