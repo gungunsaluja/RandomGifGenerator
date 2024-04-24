@@ -9,12 +9,13 @@ const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
 const useGif = (tag) => {
     // const [tag, setTag] = useState('car');
     const [gif, setGif] = useState('');
+
     const [loading,setLoading] = useState('false');
     
 
     async function fetchData(tag){
       setLoading(true);
-     
+      
       const {data} = await axios.get(tag?`${url}&tag=${tag}`:url);
       // console.log(output);
       const imageSource = data.data.images.downsized_large.url;

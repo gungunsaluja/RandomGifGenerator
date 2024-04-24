@@ -9,6 +9,7 @@ const API_KEY = '1gmM18OiuKPiirUvDHyYXlb9kKj8CkpY';
 
 const Random = () => {
   // we can use axios to call api instead of using fetchdata axios is more secure than it 
+  // axios me data json format me hi aata hai
 
   // const [gif, setGif] = useState('');
   // const [loading,setLoading] = useState('false');
@@ -22,9 +23,12 @@ const Random = () => {
   //   setGif(imageSource);
   //   setLoading(false);
   // }
+  // apifetch krne ke liye best way useeffect hook ko use karna hai
+  // random component ke render hone ke bad render karna kyukii.. or sirf phle render par call karna hai
   // useEffect( () => {
   //   fetchData();
   // },[] );
+  // 
   const { gif, loading, fetchData } = useGif();
   function clickHandler() {
     fetchData();
